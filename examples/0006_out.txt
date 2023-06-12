@@ -1,0 +1,50 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
++---------------------------------+
+| 10.05.2023                      |
+| 16:34 -> 18:04 Prednaska,T9:105 |
++---------------------------------+
+Enter query or type 'help':
+No events.
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
+Invalid argument.
+Enter query or type 'help':
++-----------------------------+
+| 01.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 03.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 05.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 07.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 09.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 11.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 13.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 15.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 17.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 19.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 21.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 23.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 25.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 27.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
+| 29.06.2023                  |
+| 14:00 -> 14:10 Volno,T9:105 |
++-----------------------------+
+Enter query or type 'help':
+Goodbye.

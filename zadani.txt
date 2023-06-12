@@ -1,0 +1,78 @@
+# Calendar (téma Kalendář)
+
+Autor: Tomáš Becza
+
+## Téma z Progtestu
+
+Vaším cílem je implementovat aplikaci pro správu kalendářů a událostí v nich.
+
+Implementujte následující funcionality:
+
+1. Kalendář musí zobrazovat alespoň denní, týdenní a měsíční přehled událostí.
+2. U událostí chceme evidovat alespoň následující informace: název události, datum a čas, trvání, místo, účastníky, tagy
+   a textovou poznámku. V rámci své implementace můžete přidat další zajímavé atributy (př. účast: povinná,
+   přesunutelná, volitelná, …).
+3. Události mohou být jednorázové nebo opakující se. Umožněte definovat frekvenci opakování alespoň na úrovni dní.
+4. Kalendář musí umožnit vyhledávat události podle jednotlivých atributů a to včetně kombinací obsahující spojky "a
+   zároveň" a "nebo" (př. události před 23.1.2022 a zároveń v Praze, …).
+5. Umožněte exportování a importování událostí. Exportovat lze i výběr definovaný vyhledáváním.
+6. Kalendář nesmí umožnit kolizi, v případě kolize musí umožnit najít nejbližší volný termín nebo přesunout událost (
+   je-li to možné). Alternativně můžete povolit max. počet kolizí (př. 24 kolizí pro učebnu, podle počtu studentů, které
+   v ní mohou být, …), nelze však kolize ignorovat.
+
+Kde lze využít polymorfismus? (doporučené)
+
+- zobrazení kalendáře: denní, týdenní, měsíční, …
+- strategie řešení kolizí: nalezení nejbližšího možného termínu, přesun max. X jiných událostí na volné sloty, …
+- formáty exportovaných událostí: proprietární, iCalendar, CSV, …
+- uživatelské rozhraní: konzole, ncurses, SDL, OpenGL (různé varianty), …
+- druhy událostí (předem si rozmyslete, zda ve vašem případě se jedná o polymorfismus)
+
+## Zadanie aplikácie Calendar
+
+Vytvoríme aplikáciu "Calendar", kde užívateľ aplikáciu spustí a bude môcť pomocou jednoduchých príkazov v termináli
+meniť databázu udalostí.
+
+- `select ...` vypíše do terminálu udalosti ktoré spĺňajú dané podmienky (formát,
+  napr. `select place=T9:105 200 and start<01.01.2023` )
+- `day [date]` vypíše do terminálu denný prehľad udalostí, (formát `date` je `dd.mm.yyyy`)
+- `week [week]` vypíše do terminálu týždenný prehľad udalostí, (formát `week` je `[cislo_tyzdna_v_roku].yyyy`)
+- `month [month]` vypíše do terminálu mesačný prehľad udalostí, (formát `month` je `[cislo_mesiaca_v_roku].yyyy`)
+- `-e [filename]` vo všetkých predošlých príkazoch je možné tento prepínač použiť hneď za predošlými príkazmi, výstup
+  potom bude presmerovaný z terminálu do súboru
+- `add ...` pridá udalosť
+- `import [filename]` importuje dáta zo souboru
+- `help` zobrazí nápovedu
+- `quit` ukončí program
+
+Aplikácia bude simulovať klasický kalendár, respektíve databázu udalostí, po zadaní niektorého z dotazov vyššie vypíše
+do terminálu stručné info, pre podrobné info si treba dáta vyexportovať. V ukážke niššie je spôsob činnosti
+programu, `$` sú označené vstupy užívateľa.
+
+```
+Enter query or type 'help':
+$ import prednasky.txt
+Enter query or type 'help':
+$ day 02.05.2023
++---------------------------------------+
+| 09:15 - 10:45 -> Prednaska MA1, Praha |
+| 12:45 - 14:15 -> Prednaska PA2, Praha |
++---------------------------------------+
+Enter query or type 'help':
+```
+
+Jednotlivé príkazy budú implementované pomocou jednoduchej triedy `CCommand`, ktoré bude spravovať `CApplication`,
+tá sa stará o beh celej aplikácie.
+Obsahuje triedu `CInterface` pre prácu so vstupmi a výstupmi.
+----
+Ďalej obsahuje triedu `CCalendar` v ktorej sú uložené jednotlivé udalosti `CEvent`. Umožňuje tiež v metóde addEvent
+pridávať udalosti, ktorá sa stará aj o detekciu kolízií (presunie udalosť na najbližší možný termín).
+Trieda `CEvent` obsahuje požadované vlastnosti každej udalosti, okrem iného aj `CPerson`, tu sú uložené údaje o
+zúčastnených (resp. pozvaných) osobách a `CPlace`, kde je možné špecifikovať názov a kapacitu miestnosti.
+
+## Kde mám polymorfizmus?
+
+- Polymorfizmus využívam pri triede `CComand`, z ktorej dedia triedy `CImport`, `CExport`, `CSelect`, `CPrint`, `CAdd` `CHelp`
+  (ktoré vykonávajú príkazy zadané v `CInterface`).
+- Takisto sa využíva pri `CCalendarFormat`, dedia z nej triedy `CCalendarFormatDay`, `CCalendarFormatMonth`
+  a `CCalendarFormatWeek`, ktoré upravia výstup na požadovaný formát.

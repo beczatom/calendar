@@ -1,0 +1,16 @@
+add 10.06.2023 16:34;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;7;Konecne volno.;
+add 01.06.2023 14:00;10;Joga;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;15;Konecne volno.;
+add 01.06.2023 14:00;10;Joga;T9:105 200;Jan Priklad priklad@gmail.com;tag1;15;Konecne volno.;
+add 15.06.2023 14:00;10;Joga;T9:349 200;Jan Priklad priklad@gmail.com;tag1;100;Konecne volno.;
+select
+select name=Joga and participant=Jana Bezmailova
+select duration=90
+select start=01.06.2023
+select tag=tag1 and tag=tag2
+select place=T9:349 200
+select start=10.06.2023 or start>14.06.2023
+select -e start=10.06.2023 or start>14.06.2023
+import export.txt
+select
+quit

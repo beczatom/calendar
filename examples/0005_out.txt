@@ -1,0 +1,26 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
++---------------------------------+
+| Wednesday                       |
+| 16:34 -> 18:04 Prednaska,T9:105 |
++---------------------------------+
+Enter query or type 'help':
+No events.
+Enter query or type 'help':
+Invalid argument.
+Enter query or type 'help':
+Invalid argument.
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
++-----------------------------+
+| Tuesday                     |
+| 14:00 -> 14:10 Volno,T9:105 |
+| Thursday                    |
+| 14:00 -> 14:10 Volno,T9:105 |
+| Saturday                    |
+| 14:00 -> 14:10 Volno,T9:105 |
++-----------------------------+
+Enter query or type 'help':
+Goodbye.

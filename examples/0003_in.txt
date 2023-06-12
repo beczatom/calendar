@@ -1,0 +1,18 @@
+add 10.05.2023 16:34;90;Prednaska;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+select
+select name=Prednaska
+select name=Prednaska or name=ziadne
+select place=T9:105 200
+select participant=Jana Bezmailova
+select tag=tag1
+select and
+select or
+select and name=Prednaska
+select or name=Prednaska
+select name=Prednaska and name=Volno
+select start<1.1.2000
+select start<
+select start<a.b.c
+select start>1.1.2023
+quit

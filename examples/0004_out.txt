@@ -1,0 +1,30 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
++-----------------------------+
+| 14:00 -> 14:10 Volno,T9:105 |
++-----------------------------+
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
+No events.
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
++-----------------------------+
+| 14:00 -> 14:10 Volno,T9:105 |
++-----------------------------+
+Enter query or type 'help':
+Enter query or type 'help':
++--------------------------------+
+| 14:00 -> 14:10 Volno,T9:105    |
+| 23:55 -> 00:45 Midnight,T9:105 |
++--------------------------------+
+Enter query or type 'help':
++--------------------------------+
+| 23:55 -> 00:45 Midnight,T9:105 |
++--------------------------------+
+Enter query or type 'help':
+Goodbye.

@@ -1,0 +1,11 @@
+add 10.06.2023 16:34;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;7;Konecne volno.;
+add 01.06.2023 14:00;10;Joga;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;15;Konecne volno.;
+select
+month
+month a.b
+month 06.2023
+month -e 06.2023
+import export.txt
+select
+quit

@@ -1,0 +1,4 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Goodbye.

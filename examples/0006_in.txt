@@ -1,0 +1,9 @@
+add 10.05.2023 16:34;90;Prednaska;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+month 05.2023
+month 1.2023
+month 15.2023
+month 1.a
+month
+month 					06.2023
+quit

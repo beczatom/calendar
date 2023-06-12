@@ -1,0 +1,27 @@
+Enter query or type 'help':
+Place can't be created.
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Datetime doesn't exist.
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Error in event.
+Enter query or type 'help':
+Error in event.
+Enter query or type 'help':
+Error in event.
+Enter query or type 'help':
+Error in event.
+Enter query or type 'help':
+Error in event.
+Enter query or type 'help':
+01.06.2023 14:00;10;Volno;T9:104 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;;
+01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 14:20;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 14:40;10;Volno;T9:105 200;;tag1,tag2;2;Konecne volno.;
+Enter query or type 'help':
+Goodbye.

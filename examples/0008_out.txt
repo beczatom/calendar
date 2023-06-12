@@ -1,0 +1,35 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+10.05.2023 16:34;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 14:20;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+Enter query or type 'help':
+Enter query or type 'help':
+Can't open file.
+Enter query or type 'help':
+Can't open file.
+Enter query or type 'help':
+Enter query or type 'help':
++-----------------------------+
+| 14:00 -> 14:10 Volno,T9:105 |
+| 14:20 -> 14:30 Volno,T9:105 |
+| 14:40 -> 14:50 Volno,T9:105 |
+| 15:00 -> 15:10 Volno,T9:105 |
++-----------------------------+
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+10.05.2023 16:34;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+10.05.2023 18:14;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 14:20;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 14:40;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 15:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 15:20;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 15:40;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 16:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+01.06.2023 16:20;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+Enter query or type 'help':
+Goodbye.
