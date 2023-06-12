@@ -233,13 +233,9 @@ CEvent::CEvent(std::istream &istream) {
         istream.getline(line, BUFFER_LENGTH, EVENTS_DELIMITER);
         if(istream.eof()) return;
         str = line;
-        //cout << str << endl;
         stringstream ss = stringstream (str);
 
-        if(i != 4 && i != 5 && i != 7 && str.empty()) {
-            //cout << 1 << endl;
-            throw invalid_argument(EVENT_ERROR);
-        }
+        if(i != 4 && i != 5 && i != 7 && str.empty()) throw invalid_argument(EVENT_ERROR);
 
         switch (i){
             case 0:
@@ -249,7 +245,6 @@ CEvent::CEvent(std::istream &istream) {
                 try {
                     duration = stoi(str);
                 } catch ( ... ){
-                    //cout << 2 << endl;
                     throw invalid_argument(INVALID_ARGUMENT_ERROR);
                 }
                 break;
@@ -273,7 +268,6 @@ CEvent::CEvent(std::istream &istream) {
                 try{
                     repeatingDays = stoi(str);
                 } catch( ... ){
-                    //cout << 3 << endl;
                     throw invalid_argument(INVALID_ARGUMENT_ERROR);
                 }
                 break;
@@ -293,11 +287,7 @@ CEvent::CEvent(std::istream &istream) {
         mParticipants = participants;
     }
 
-    else{
-//        cout << 4 << endl;
-//        cout << *this << endl;
-        throw invalid_argument(EVENT_ERROR);
-    }
+    else throw invalid_argument(EVENT_ERROR);
 }
 
 CDateTime CEvent::getStart() const{
