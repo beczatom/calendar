@@ -1,0 +1,27 @@
+#include <fstream>
+#include <sstream>
+#include "../headers/CImport.h"
+#include "../constants.h"
+
+using namespace std;
+
+CImport::CImport(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface, const string & args) : CCommand(calendar, interface, args){
+}
+
+void CImport::Do() {
+    string fileName = mArgs.substr(IMPORT_COMMAND.length() + 1, mArgs.length());
+    ifstream ifs(fileName);
+
+    if(!ifs.good()){
+        throw invalid_argument(FILE_ERROR);
+    }
+
+    CEvent event;
+    while (!ifs.eof()){
+        event = CEvent(ifs);
+        if(ifs.eof()) break;
+        mCalendar->addEvent(event);
+    }
+
+    ifs.close();
+}

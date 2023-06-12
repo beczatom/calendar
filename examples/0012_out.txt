@@ -1,0 +1,12 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Can't open file.
+Enter query or type 'help':
+Can't open file.
+Enter query or type 'help':
+10.06.2023 16:34;90;Prednaska;T9:105 100;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+15.06.2023 14:00;10;Joga;T9:349 200;Jan Priklad priklad@gmail.com;tag1;100;Konecne volno.;
+Enter query or type 'help':
+Goodbye.
