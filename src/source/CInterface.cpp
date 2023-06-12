@@ -1,7 +1,6 @@
 #include <string>
 #include "../headers/CInterface.h"
 #include "../headers/CEvent.h"
-#include "../constants.h"
 
 using namespace std;
 

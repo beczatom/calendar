@@ -1,11 +1,5 @@
 #include <sstream>
 #include "../headers/CPrint.h"
-#include "../headers/CCalendarFormat.h"
-#include "../headers/CCalendarFormatDay.h"
-#include "../headers/CCalendarFormatWeek.h"
-#include "../headers/CCalendarFormatMonth.h"
-#include "../headers/CExport.h"
-#include "../constants.h"
 
 using namespace std;
 

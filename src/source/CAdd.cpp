@@ -1,6 +1,5 @@
 #include <sstream>
 #include "../headers/CAdd.h"
-#include "../constants.h"
 
 using namespace std;
 

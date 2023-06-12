@@ -1,6 +1,4 @@
 #include "../headers/CCalendarFormatWeek.h"
-#include "../constants.h"
-#include <vector>
 
 using namespace std;
 

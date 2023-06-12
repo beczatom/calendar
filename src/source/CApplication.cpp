@@ -1,5 +1,4 @@
 #include "../headers/CApplication.h"
-#include "../constants.h"
 
 using namespace std;
 

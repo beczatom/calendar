@@ -18,10 +18,17 @@ doc: $(HEADERS) src/constants.h
 $(PROGRAM) : $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(PROGRAM)
 
+# dependency info of .o files
 -include $(OBJECTS:.o=.d)
 
+objs/main.o: src/main.cpp
+	$(CXX) -c $(CFLAGS) src/main.cpp -o objs/main.o
+	$(CXX) -MM $(CFLAGS) src/main.cpp > objs/main.d
+
+# compile and generate dependency info
 objs/%.o: src/source/%.cpp
 	$(CXX) -c $(CFLAGS) src/source/$*.cpp -o objs/$*.o
+	$(CXX) -MM $(CFLAGS) src/source/$*.cpp > objs/$*.d
 
 objs:
 	mkdir objs

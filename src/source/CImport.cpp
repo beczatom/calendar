@@ -1,7 +1,6 @@
 #include <fstream>
 #include <sstream>
 #include "../headers/CImport.h"
-#include "../constants.h"
 
 using namespace std;
 
