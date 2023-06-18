@@ -2,13 +2,19 @@
 
 using namespace std;
 
-CCalendarFormatWeek::CCalendarFormatWeek(const std::shared_ptr<CInterface> & interface,
-                                           const std::shared_ptr<std::set<CEvent>> & events) : CCalendarFormat(interface, events){}
+CCalendarFormatWeek::CCalendarFormatWeek() : CCalendarFormat(){}
 
-void CCalendarFormatWeek::print(string & toPrint) const{
-    if(mEvents->empty()) {
+string CCalendarFormatWeek::print(std::shared_ptr<CCalendar> & calendar, std::string & args) const{
+    int weekNum, year;
+    args = args.substr(WEEK_COMMAND.length());
+    if (sscanf(args.c_str(), "%d.%d", &weekNum, &year) != 2) throw invalid_argument(INVALID_ARGUMENT_ERROR);
+    set<CEvent> events;
+    calendar->selectSameWeek(weekNum, year, events);
+
+    string toPrint;
+    if(events.empty()) {
         toPrint.append(NO_EVENTS_RESPONSE);
-        return;
+        return toPrint;
     }
 
     int beforeDay = -1;
@@ -16,7 +22,7 @@ void CCalendarFormatWeek::print(string & toPrint) const{
     vector<string> lines;
     size_t i = 0;
 
-    for(const CEvent & event : *mEvents){
+    for(const CEvent & event : events){
         if(event.getStart().getDayInWeekNum() != beforeDay){
             beforeDay = event.getStart().getDayInWeekNum();
             lines.emplace_back(VIEW_RECTANGLE_VERTICAL_SIDE + " " + DAY_NAMES[beforeDay]);
@@ -32,4 +38,17 @@ void CCalendarFormatWeek::print(string & toPrint) const{
 
     //align to a nice rectangle
     alignToPrint(toPrint, lines, horizontalLine, maxLineSize);
+
+    return toPrint;
+}
+
+void CCalendarFormatWeek::exportEvents(std::shared_ptr<CCalendar> & calendar, std::string & args) const{
+    int weekNum, year;
+    set<CEvent> events;
+    size_t exportIndex = args.find(EXPORT_OPERATOR);
+    if (exportIndex != string::npos) exportIndex += EXPORT_OPERATOR.length();
+    args = args.substr(exportIndex);
+    if (sscanf(args.c_str(), "%d.%d", &weekNum, &year) != 2) throw invalid_argument(INVALID_ARGUMENT_ERROR);
+    calendar->selectSameWeek(weekNum, year, events);
+    toExportPrint(events);
 }

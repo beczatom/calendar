@@ -4,11 +4,11 @@
 
 using namespace std;
 
-CImport::CImport(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface, const string & args) : CCommand(calendar, interface, args){
+CImport::CImport(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface) : CCommand(calendar, interface){
 }
 
-void CImport::Do() {
-    string fileName = mArgs.substr(IMPORT_COMMAND.length() + 1, mArgs.length());
+void CImport::Do(string & args) {
+    string fileName = args.substr(IMPORT_COMMAND.length() + 1, args.length());
     ifstream ifs(fileName);
 
     if(!ifs.good()){

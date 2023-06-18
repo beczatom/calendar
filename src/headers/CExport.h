@@ -5,29 +5,28 @@
 
 #pragma once
 
-#include "CCommand.h"
+#include <string>
+
+#include "../constants.h"
 
 /**
  * @class CExport
  * @note Exports events.
  */
 
-class CExport : public CCommand {
+class CExport{
 public:
     /**
      * Creates an instance of CExport.
-     * @param[in] calendar - to export from
-     * @param[in] interface - to export to
-     * @param[in] args - what to export
      */
-    CExport(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface,
-            const std::string &args);
+    CExport() = default;
 
     ~CExport() = default;
 
     /**
      * Exports events in args.
+     * @param args - events to export
      * @throw invalid_argument - if file is not valid
      */
-    void Do() override;
+    void Do(std::string & args);
 };

@@ -3,11 +3,12 @@
 
 using namespace std;
 
-CAdd::CAdd(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface, const string & args) : CCommand(calendar, interface, args){
+CAdd::CAdd(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface) : CCommand(calendar, interface){
 }
 
-void CAdd::Do() {
-    stringstream ss(mArgs);
+void CAdd::Do(string & args) {
+    args = args.substr(ADD_COMMAND.length());
+    stringstream ss(args);
 
     if(!ss.good()){
         throw invalid_argument(INVALID_OPERATOR_ERROR);

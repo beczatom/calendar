@@ -21,10 +21,11 @@ public:
      */
     explicit CHelp(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface);
 
-    ~CHelp() = default;
+    ~CHelp() override = default;
 
     /**
      * Prints help.
+     * @param[in] args
      */
-    void Do() override;
+    void Do(std::string & args) override;
 };

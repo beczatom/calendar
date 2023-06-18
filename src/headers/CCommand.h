@@ -20,24 +20,29 @@ protected:
     std::shared_ptr<CCalendar> mCalendar;
     /// for possible output
     std::shared_ptr<CInterface> mInterface;
-    /// input from user
-    std::string mArgs;
+
+    /**
+     * Finds out if the given word starts with given prefix.
+     * @param[in] word - given word
+     * @param[in] prefix - given prefix
+     * @return TRUE - if word starts with given prefix
+     * @return FALSE - if word does not start with given prefix
+     */
+    bool startsWith(const std::string &word, const std::string &prefix) const;
 public:
     /**
      * Creates an instance of CCommand
      * @param[in] calendar - for searching and appending events
      * @param[in] interface - for output
-     * @param[in] args - input text
      */
-    CCommand(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface,
-             const std::string & args);
+    CCommand(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface);
 
-    ~CCommand() = default;
+    virtual ~CCommand() = default;
 
     /**
-     * Finds the correct command and then executes it.
+     * Executes the correct command.
+     * @param[in] args - arguments of command
      * @throw invalid_argument - if args are not in correct format
      */
-    virtual void Do();
+    virtual void Do(std::string & args) = 0;
 };
-

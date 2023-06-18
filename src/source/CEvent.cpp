@@ -167,8 +167,8 @@ bool CEvent::isInCollision(const CEvent & event) const{
     CDateTime temp2 = event.mStart;
     temp1.addMinutes(mDuration);
     temp2.addMinutes(event.mDuration);
-    if (temp1 >= event.mStart && mStart <= temp2) return true;
-    if (temp2 >= mStart && temp1 >= event.mStart) return true;
+    if (temp1 > event.mStart && mStart < temp2) return true;
+    if (temp2 > mStart && temp1 > event.mStart) return true;
     return false;
 }
 

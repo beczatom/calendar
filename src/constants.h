@@ -120,4 +120,4 @@ const std::string HELP = "select [arguments/and/or]\t- selects events\n"
                          "quit \t\t\t\t- ends the program :(\n";
 
 /// used to avoid collisions
-const int MINUTES_STEP_COLLISION = 10;
+const int MINUTES_STEP_COLLISION = 1;

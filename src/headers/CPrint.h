@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <map>
+
+#include "CCommand.h"
 #include "CCalendarFormat.h"
 #include "CCalendarFormatDay.h"
 #include "CCalendarFormatWeek.h"
@@ -18,27 +21,21 @@
 
 class CPrint : public CCommand {
 private:
-    /**
-     * Exporting - printing to file.
-     * @param[out] toPrint - out printed events
-     * @param[in] events - events to print
-     */
-    void toExportPrint(std::string & toPrint, const std::set<CEvent> & events);
+    std::map<std::string, CCalendarFormat*> mFormats;
 public:
     /**
      * Creates an instance of CPrint.
      * @param[in] calendar - to print from
      * @param[in] interface - to print to
-     * @param[in] args - what to print
      */
-    CPrint(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface,
-           const std::string &args);
+    CPrint(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface);
 
-    ~CPrint() = default;
+    ~CPrint() override;
 
     /**
      * Finds the format to use and calls it.
+     * @param[in] args - contains the format type and arguments
      * @throw invalid_argument - if args is not in correct format
      */
-    void Do() override;
+    void Do(std::string & args) override;
 };

@@ -32,22 +32,7 @@ void deleteWS(string & str){
     }
 }
 
-//returns true if the string starts with given prefix
-bool startsWithPrefix(const string &word, const string &prefix) {
-    if (word.length() < prefix.length()) return false;
-    size_t prefixStart = 0;
-    for (size_t i = 0; i < prefix.size(); i++) {
-        if(isblank(word[i])) continue;
-        if (word[i] != prefix[prefixStart]) {
-            return false;
-        }
-        prefixStart++;
-    }
-    return true;
-}
-
-CSelect::CSelect(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface,
-                 const string &args) : CCommand(calendar, interface, args) {}
+CSelect::CSelect(shared_ptr<CCalendar> & calendar, const shared_ptr<CInterface> & interface) : CCommand(calendar, interface) {}
 
 void doAnd(set<CEvent> & events, const set<CEvent> & newEvents){
     set<CEvent> tmp = events;
@@ -61,20 +46,21 @@ void doOr(set<CEvent> & events, const set<CEvent> & newEvents){
     }
 }
 
-void CSelect::Do() {
+void CSelect::Do(string & args) {
+    args = args.substr(SELECT_COMMAND.length());
     set<CEvent> events;
     CEvent event = CEvent();
-    deleteWS(mArgs);
+    deleteWS(args);
 
     // find if contains export symbol
-    size_t exportIndex = mArgs.find(EXPORT_OPERATOR);
+    size_t exportIndex = args.find(EXPORT_OPERATOR);
     if(exportIndex != string::npos) {
-        mArgs = mArgs.substr(exportIndex + EXPORT_OPERATOR.length());
-        deleteWS(mArgs);
+        args = args.substr(exportIndex + EXPORT_OPERATOR.length());
+        deleteWS(args);
     }
 
     char arg[BUFFER_LENGTH];
-    stringstream ss(mArgs);
+    stringstream ss(args);
     bool start = true;
     bool isAnd = false;
     bool lastLogicOperator = false;
@@ -103,7 +89,7 @@ void CSelect::Do() {
             lastLogicOperator = true;
         }
         // name selection
-        else if(startsWithPrefix(strArg, string(NAME_ARGUMENT + EQUAL_OPERATOR))){
+        else if(startsWith(strArg, string(NAME_ARGUMENT + EQUAL_OPERATOR))){
             lastLogicOperator = false;
             start = false;
             strArg = strArg.substr(NAME_ARGUMENT.length() + 1, string::npos);
@@ -111,7 +97,7 @@ void CSelect::Do() {
             event.setName(strArg);
         }
         // tag selection
-        else if(startsWithPrefix(strArg, string(TAG_ARGUMENT + EQUAL_OPERATOR))){
+        else if(startsWith(strArg, string(TAG_ARGUMENT + EQUAL_OPERATOR))){
             start = false;
             lastLogicOperator = false;
             strArg = strArg.substr(TAG_ARGUMENT.length() + 1, string::npos);
@@ -119,7 +105,7 @@ void CSelect::Do() {
             event.addTag(strArg);
         }
         // duration selection
-        else if(startsWithPrefix(strArg, string(DURATION_ARGUMENT + EQUAL_OPERATOR))){
+        else if(startsWith(strArg, string(DURATION_ARGUMENT + EQUAL_OPERATOR))){
             start = false;
             lastLogicOperator = false;
             strArg = strArg.substr(DURATION_ARGUMENT.length() + 1, string::npos);
@@ -127,7 +113,7 @@ void CSelect::Do() {
             event.setDuration(stoi(strArg));
         }
         // participant selection (if contains provided person)
-        else if(startsWithPrefix(strArg, string(PARTICIPANT_ARGUMENT + EQUAL_OPERATOR))){
+        else if(startsWith(strArg, string(PARTICIPANT_ARGUMENT + EQUAL_OPERATOR))){
             start = false;
             lastLogicOperator = false;
             strArg = strArg.substr(PARTICIPANT_ARGUMENT.length() + 1, string::npos);
@@ -138,7 +124,7 @@ void CSelect::Do() {
             event.addParticipant(CPerson(strArg, string(arg)));
         }
         // place selection with provided capacity
-        else if(startsWithPrefix(strArg, string(PLACE_ARGUMENT + EQUAL_OPERATOR))){
+        else if(startsWith(strArg, string(PLACE_ARGUMENT + EQUAL_OPERATOR))){
             start = false;
             lastLogicOperator = false;
             strArg = strArg.substr(PLACE_ARGUMENT.length() + 1, string::npos);
@@ -154,7 +140,7 @@ void CSelect::Do() {
             event.setPlace(CPlace(strArg, stoi(arg)));
         }
         // by start selection with extended less or greater than operators
-        else if(startsWithPrefix(strArg, START_ARGUMENT)){
+        else if(startsWith(strArg, START_ARGUMENT)){
             start = false;
             lastLogicOperator = false;
             CDateTime eventStart = CDateTime(strArg.substr(START_ARGUMENT.length() + 1, string::npos));
@@ -208,7 +194,7 @@ void CSelect::Do() {
 
     // deciding if print to interface or file
     if(exportIndex != string::npos){
-        CExport(mCalendar, mInterface, toPrint).Do();
+        CExport().Do(toPrint);
     }
 
     else{

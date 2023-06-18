@@ -2,11 +2,6 @@
 
 using namespace std;
 
-CCalendarFormat::CCalendarFormat(const std::shared_ptr<CInterface> & interface, const shared_ptr<set<CEvent>> & events)
-        : mEvents(events),
-        mInterface(interface){
-}
-
 void CCalendarFormat::createHorizontalLine(string & horizontalLine, int maxLineSize) const{
     horizontalLine.append(VIEW_RECTANGLE_CORNER);
     for(int i = 0; i < maxLineSize - 3; i++){
@@ -24,4 +19,12 @@ void CCalendarFormat::alignToPrint(string & toPrint, vector<string> & lines, con
         toPrint.append(line + VIEW_RECTANGLE_VERTICAL_SIDE + NEWLINE_DELIMITER);
     }
     toPrint.append(horizontalLine);
+}
+
+void CCalendarFormat::toExportPrint(const set<CEvent> & events) const{
+    string toExport;
+    for(const CEvent & event: events){
+        toExport.append(event.toStringExport() + NEWLINE_DELIMITER);
+    }
+    CExport().Do(toExport);
 }

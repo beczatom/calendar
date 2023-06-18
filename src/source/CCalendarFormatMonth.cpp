@@ -2,13 +2,24 @@
 
 using namespace std;
 
-CCalendarFormatMonth::CCalendarFormatMonth(const std::shared_ptr<CInterface> & interface,
-                                           const std::shared_ptr<std::set<CEvent>> & events) : CCalendarFormat(interface, events){}
+CCalendarFormatMonth::CCalendarFormatMonth() : CCalendarFormat(){}
 
-void CCalendarFormatMonth::print(string & toPrint) const{
-    if(mEvents->empty()) {
+string CCalendarFormatMonth::print(std::shared_ptr<CCalendar> & calendar, std::string & args) const{
+    set<CEvent> events;
+
+    size_t firstNum = args.find_first_of("0123456789");
+    if (firstNum > args.length()) throw invalid_argument(INVALID_ARGUMENT_ERROR);
+    args.insert(firstNum, "1.");
+
+
+    CDateTime dateTime(args.substr(MONTH_COMMAND.length()));
+
+    calendar->selectSameMonth(dateTime.getMonth(), dateTime.getYear(), events);
+
+    string toPrint;
+    if(events.empty()) {
         toPrint.append(NO_EVENTS_RESPONSE);
-        return;
+        return toPrint;
     }
 
     CDateTime beforeDay;
@@ -16,7 +27,7 @@ void CCalendarFormatMonth::print(string & toPrint) const{
     vector<string> lines;
     size_t i = 0;
 
-    for(const CEvent & event : *mEvents){
+    for(const CEvent & event : events){
         if(event.getStart().toStringDate() != beforeDay.toStringDate()){
             beforeDay = event.getStart();
             lines.emplace_back(VIEW_RECTANGLE_VERTICAL_SIDE + " " + beforeDay.toStringDate());
@@ -32,4 +43,20 @@ void CCalendarFormatMonth::print(string & toPrint) const{
 
     //align to a nice rectangle
     alignToPrint(toPrint, lines, horizontalLine, maxLineSize);
+
+    return toPrint;
+}
+
+void CCalendarFormatMonth::exportEvents(std::shared_ptr<CCalendar> & calendar, std::string & args) const{
+    set<CEvent> events;
+    size_t exportIndex = args.find(EXPORT_OPERATOR);
+    if (exportIndex != string::npos) exportIndex += EXPORT_OPERATOR.length();
+
+    size_t firstNum = args.find_first_of("0123456789");
+    if (firstNum > args.length()) throw invalid_argument(INVALID_ARGUMENT_ERROR);
+    args.insert(firstNum, "1.");
+
+    CDateTime dateTime(args.substr(exportIndex));
+    calendar->selectSameMonth(dateTime.getMonth(), dateTime.getYear(), events);
+    toExportPrint(events);
 }
