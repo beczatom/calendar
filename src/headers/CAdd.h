@@ -18,16 +18,15 @@ public:
      * Constructs an instance of CAdd
      * @param[in] calendar - to append events
      * @param[in] interface - to print
-     * @param[in] args - input to create events
      */
-    CAdd(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface,
-    const std::string &args);
+    CAdd(std::shared_ptr<CCalendar> & calendar, const std::shared_ptr<CInterface> & interface);
 
     ~CAdd() = default;
 
     /**
-     * Adds events to beczatom.
+     * Adds events to calendar.
+     * @param[in] args - input to create events
      * @throw invalid_argument - if args are not in correct format
      */
-    void Do() override;
+    void Do(std::string & args) override;
 };

@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include <map>
+
 #include "CCalendar.h"
 #include "CInterface.h"
 #include "CCommand.h"
@@ -20,6 +22,8 @@ private:
     std::shared_ptr<CCalendar> mCalendar;
     /// to communicate with user
     std::shared_ptr<CInterface> mInterface;
+    /// holds pointers to commands
+    std::map<std::string, CCommand*> mCommands;
 
 public:
     /**
@@ -27,7 +31,7 @@ public:
      */
     CApplication();
 
-    ~CApplication() = default;
+    ~CApplication();
 
     /**
      * Starts listening to commands and executes them.

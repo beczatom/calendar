@@ -7,8 +7,12 @@
 
 #include <memory>
 #include <vector>
+#include <map>
+
+#include "CCalendar.h"
 #include "CEvent.h"
 #include "CInterface.h"
+#include "CExport.h"
 
 /**
  * @class CCalendarFormat
@@ -16,11 +20,6 @@
  */
 class CCalendarFormat {
 protected:
-    /// events to print out
-    std::shared_ptr<std::set<CEvent>> mEvents;
-    /// interface to where the events will be printed
-    std::shared_ptr<CInterface> mInterface;
-
     /**
      * Creates horizontal lines for rectangle in printing.
      * @param[out] horizontalLine - the wanted line
@@ -37,19 +36,32 @@ protected:
      */
     void alignToPrint(std::string & toPrint, std::vector<std::string> & lines, const std::string & horizontalLine, int maxLineSize) const;
 
+    /**
+     * Exporting - printing to file.
+     * @param[in] events - events to export
+     */
+    void toExportPrint(const std::set<CEvent> & events) const;
+
 public:
     /**
      * Creates an instance of CCalendarFormat
-     * @param[in] interface - where the events will be printed out
-     * @param[in] events - events to print out
      */
-    CCalendarFormat(const std::shared_ptr<CInterface> & interface, const std::shared_ptr<std::set<CEvent>> & events);
+    CCalendarFormat() = default;
 
-    ~CCalendarFormat() = default;
+    virtual ~CCalendarFormat() = default;
 
     /**
-     * Prints events in a correct format (day/week/month)
-     * @param [out] toPrint - will contain the correct format
+     * Prints events in a correct format (day/week/month).
+     * @param[in] calendar - to select from events
+     * @param[in] args - which events to select
+     * @return string with printed day/week/month
      */
-    virtual void print(std::string & toPrint) const = 0;
+    virtual std::string print(std::shared_ptr<CCalendar> & calendar, std::string & args) const = 0;
+
+    /**
+      * Exports events.
+      * @param[in] calendar - to select from events
+      * @param[in] args - which events to select
+      */
+    virtual void exportEvents(std::shared_ptr<CCalendar> & calendar, std::string & args) const = 0;
 };

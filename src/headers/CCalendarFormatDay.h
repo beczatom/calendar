@@ -16,16 +16,23 @@ class CCalendarFormatDay : public CCalendarFormat {
 public:
     /**
      * Creates an instance of CCalendarFormatDay
-     * @param[in] interface - where the events will be printed out
-     * @param[in] events - the events to print out
      */
-    explicit CCalendarFormatDay(const std::shared_ptr<CInterface> & interface, const std::shared_ptr<std::set<CEvent>> & events);
+    CCalendarFormatDay();
 
     ~CCalendarFormatDay() = default;
 
     /**
-     * Prints events in a day format
-     * @param [out] toPrint - will contain day format
-     */
-    void print(std::string & toPrint) const override;
+      * Prints events in day format.
+      * @param[in] calendar - to select from events
+      * @param[in] args - which events to select
+      * @return string with printed day/week/month
+      */
+    virtual std::string print(std::shared_ptr<CCalendar> & calendar, std::string & args) const override;
+
+    /**
+      * Exports events.
+      * @param[in] calendar - to select from events
+      * @param[in] args - which events to select
+      */
+    virtual void exportEvents(std::shared_ptr<CCalendar> & calendar, std::string & args) const override;
 };
