@@ -1,4 +1,4 @@
-#include "headers/CApplication.h"
+#include "../headers/CApplication.h"
 
 using namespace std;
 
