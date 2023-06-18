@@ -14,7 +14,7 @@ run: compile
 
 compile: objs $(PROGRAM)
 
-doc: $(HEADERS) src/constants.h
+doc: $(HEADERS) src/constants.h Doxyfile
 	doxygen Doxyfile
 
 $(PROGRAM): $(OBJS)

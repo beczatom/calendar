@@ -60,11 +60,10 @@ $ day 02.05.2023
 +---------------------------------------+
 Enter query or type 'help':
 ```
-
-Jednotlivé príkazy budú implementované pomocou jednoduchej triedy `CCommand`, ktoré bude spravovať `CApplication`,
+Jednotlivé príkazy sú implementované pomocou jednoduchej triedy `CCommand`, ktoré bude spravovať `CApplication`,
 tá sa stará o beh celej aplikácie.
 Obsahuje triedu `CInterface` pre prácu so vstupmi a výstupmi.
-----
+
 Ďalej obsahuje triedu `CCalendar` v ktorej sú uložené jednotlivé udalosti `CEvent`. Umožňuje tiež v metóde addEvent
 pridávať udalosti, ktorá sa stará aj o detekciu kolízií (presunie udalosť na najbližší možný termín).
 Trieda `CEvent` obsahuje požadované vlastnosti každej udalosti, okrem iného aj `CPerson`, tu sú uložené údaje o
@@ -72,7 +71,7 @@ zúčastnených (resp. pozvaných) osobách a `CPlace`, kde je možné špecifik
 
 ## Kde mám polymorfizmus?
 
-- Polymorfizmus využívam pri triede `CComand`, z ktorej dedia triedy `CImport`, `CExport`, `CSelect`, `CPrint`, `CAdd` `CHelp`
+- Polymorfizmus využívam pri triede `CComand`, z ktorej dedia triedy `CImport`, `CSelect`, `CPrint`, `CAdd` `CHelp`
   (ktoré vykonávajú príkazy zadané v `CInterface`).
 - Takisto sa využíva pri `CCalendarFormat`, dedia z nej triedy `CCalendarFormatDay`, `CCalendarFormatMonth`
   a `CCalendarFormatWeek`, ktoré upravia výstup na požadovaný formát.
