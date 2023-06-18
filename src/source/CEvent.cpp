@@ -39,6 +39,10 @@ bool CEvent::operator<(const CDateTime &dateTime) const{
     return mStart < dateTime;
 }
 
+bool CEvent::operator>(const CDateTime &dateTime) const{
+    return mStart > dateTime;
+}
+
 bool CEvent::operator==(const CEvent &event) const{
     return !(mStart < event.mStart) && !(event.mStart < mStart);
 }
@@ -174,6 +178,10 @@ bool CEvent::isInCollision(const CEvent & event) const{
 
 CPlace CEvent::getPlace() const {
     return mPlace;
+}
+
+int CEvent::getParticipantsNum() const {
+    return mParticipants.size();
 }
 
 bool CEvent::willBeOn(const CDateTime &dateTime) const {

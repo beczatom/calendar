@@ -95,6 +95,14 @@ public:
     bool operator<(const CDateTime & dateTime) const;
 
     /**
+     * Compares if this starts after some dateTime.
+     * @param[in] dateTime - compared to dateTime
+     * @return TRUE if this starts after the given dateTime.
+     * @return FALSE if this do not start after the given dateTime.
+     */
+    bool operator>(const CDateTime & dateTime) const;
+
+    /**
      * Compares if this is greater than given event (first by date, then by its place)
      * @param[in] event - compared to event
      * @return TRUE if this is greater than given event.
@@ -194,6 +202,12 @@ public:
      * @return the end of the event
      */
     CDateTime getEnd() const;
+
+    /**
+     * Returns the number of participants.
+     * @return the number of participants
+     */
+     int getParticipantsNum() const;
 
     /**
      * Detects if event is repeating.

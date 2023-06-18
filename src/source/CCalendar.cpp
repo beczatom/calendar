@@ -52,12 +52,9 @@ void CCalendar::selectLessDate(const CDateTime &dateTime, set<CEvent> & events) 
 
 void CCalendar::selectGreaterDate(const CDateTime &dateTime, set<CEvent> & events) const {
     CEvent comparedEvent = CEvent(dateTime);
-    auto it = mEvents.lower_bound(comparedEvent);
 
-    if(*it == comparedEvent) it++;
-
-    for(; it != mEvents.end(); ++it){
-        events.insert(*it);
+    for(const CEvent & event : mEvents){
+        if(event.isRepeating() || event > dateTime) events.insert(event);
     }
 }
 
