@@ -10,6 +10,19 @@ CCalendar::CCalendar(const std::set<CEvent> &events) {
 void CCalendar::addEvent(const CEvent &event) {
     CEvent newEvent = event;
 
+    // same event issue
+    set<CEvent>::iterator it = mEvents.find(newEvent);
+    if(it != mEvents.end()){
+        if(it->getParticipantsNum() + newEvent.getParticipantsNum() <= newEvent.getPlace().getCapacity()){
+            for(const CPerson & participant : it->getParticipants()){
+                newEvent.addParticipant(participant);
+            }
+            mEvents.erase(it);
+            mEvents.insert(newEvent);
+            return;
+        }
+    }
+
     CEvent tmp = CEvent();
     tmp.setPlace(event.getPlace());
     set<CEvent> samePlace;

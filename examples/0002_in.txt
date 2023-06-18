@@ -1,15 +1,15 @@
 add 10.05.2023 16:34;90;Prednaska;T9:105 a;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
-add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
-add 01.06.2023 14:00;10;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;10;Volno;T9:105 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;10;Volno;T9:105 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
 add
 add ;;;;;Xyz
 add 		zyx
-add 01.06.2023 14:00;10;Volno;T9:104 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;;
-add 01.06.2023 14:00;10;Volno;T9:105 200;;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;10;Volno;T9:104 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;;
+add 01.06.2023 14:00;10;Volno;T9:105 2;;tag1,tag2;2;Konecne volno.;
 add 01.06.2023 14:00;10;Volno;;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
-add 01.06.2023 14:00;10;;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;10;;T9:105 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
 add 01.06.2023 14:00;10;Volno;T9:105 1;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
-add 01.06.2023 14:00;0;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
-add 01.06.2023 14:00;;Volno;T9:105 200;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;0;Volno;T9:105 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
+add 01.06.2023 14:00;;Volno;T9:105 2;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;2;Konecne volno.;
 select
 quit

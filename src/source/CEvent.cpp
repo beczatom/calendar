@@ -184,6 +184,10 @@ int CEvent::getParticipantsNum() const {
     return mParticipants.size();
 }
 
+std::set<CPerson> CEvent::getParticipants() const{
+    return mParticipants;
+}
+
 bool CEvent::willBeOn(const CDateTime &dateTime) const {
     CDateTime tmp;
     // if start is on same day

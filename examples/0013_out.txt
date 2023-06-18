@@ -1,0 +1,8 @@
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+Enter query or type 'help':
+10.06.2023 16:34;90;Prednaska;T9:105 3;Jana Bezmailova,Ivan Kratky,Jan Priklad priklad@gmail.com;tag1;0;Velmi zaujimava prednaska;
+10.06.2023 18:04;90;Prednaska;T9:105 3;Martin Kratky;tag1;0;Velmi zaujimava prednaska;
+Enter query or type 'help':
+Goodbye.

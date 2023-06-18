@@ -210,6 +210,12 @@ public:
      int getParticipantsNum() const;
 
     /**
+    * Returns the participants.
+    * @return the participants
+    */
+    std::set<CPerson> getParticipants() const;
+
+    /**
      * Detects if event is repeating.
      * @return TRUE if is repeating
      * @return FALSE if is not repeating

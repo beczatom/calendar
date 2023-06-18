@@ -28,6 +28,6 @@ objs:
 
 .PHONY: clean
 clean:
-	rm -rf $(PROGRAM) objs/ doc/ 2>/dev/null
+	rm -rf $(PROGRAM) objs/ doc/ export.txt 2>/dev/null
 
 -include objs/*.d

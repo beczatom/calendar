@@ -1,0 +1,5 @@
+add 10.06.2023 16:34;90;Prednaska;T9:105 3;Jana Bezmailova,Jan Priklad priklad@gmail.com;tag1,tag2;0;Velmi zaujimava prednaska;
+add 10.06.2023 16:34;90;Prednaska;T9:105 3;Ivan Kratky;tag1;0;Velmi zaujimava prednaska;
+add 10.06.2023 16:34;90;Prednaska;T9:105 3;Martin Kratky;tag1;0;Velmi zaujimava prednaska;
+select
+quit
