@@ -1,7 +1,7 @@
-import import_test_1.png
-import import_test_2.txt
-import import_test_3.txt
-import import_test_4.txt
-import import_test_100.txt
+import examples/import_test_1.png
+import examples/import_test_2.txt
+import examples/import_test_3.txt
+import examples/import_test_4.txt
+import examples/import_test_100.txt
 select
 quit

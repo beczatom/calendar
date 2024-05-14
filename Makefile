@@ -26,8 +26,14 @@ objs/%.o: src/source/%.cpp
 objs:
 	mkdir -p objs
 
+test: compile
+	examples/testall.sh
+
+memtest: compile
+	examples/memtest.sh
+
 .PHONY: clean
 clean:
-	rm -rf $(PROGRAM) objs/ doc/ export.txt 2>/dev/null
+	rm -rf $(PROGRAM) objs/ doc/ export.txt 2>/dev/null out.txt
 
 -include objs/*.d

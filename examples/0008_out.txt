@@ -9,8 +9,6 @@ Enter query or type 'help':
 Enter query or type 'help':
 Can't open file.
 Enter query or type 'help':
-Can't open file.
-Enter query or type 'help':
 Enter query or type 'help':
 +-----------------------------+
 | 14:00 -> 14:10 Volno,T9:105 |
