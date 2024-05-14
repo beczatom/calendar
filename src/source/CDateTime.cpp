@@ -233,7 +233,7 @@ CDateTime CDateTime::getFirstDayInWeek(int weekNum, int year) {
     CDateTime date;
     date.setDate(1, 1, year);
     int dayInWeekNum = date.getDayInWeekNum();
-    date.addDays(DAYS_IN_WEEK - dayInWeekNum);
+    if(dayInWeekNum != 0) date.addDays(DAYS_IN_WEEK - dayInWeekNum);
     date.addDays((weekNum - 1) * DAYS_IN_WEEK);
     return date;
 }
