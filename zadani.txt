@@ -69,6 +69,15 @@ pridávať udalosti, ktorá sa stará aj o detekciu kolízií (presunie udalosť
 Trieda `CEvent` obsahuje požadované vlastnosti každej udalosti, okrem iného aj `CPerson`, tu sú uložené údaje o
 zúčastnených (resp. pozvaných) osobách a `CPlace`, kde je možné špecifikovať názov a kapacitu miestnosti.
 
+Opakovanie akcie bude vyriešené možnosťou pridania periódy opakovania v dňoch. Kolízie riešené presunom na najbližší
+možný termín.
+
+Pre prehľad o použítých triedach si, prosím, pozrite dokumentáciu, resp. zjednodušený diagram `calendar.png`.
+
+Semestrálna práca je odovzdávaná druhýkrát, prvýkrát bola úspešne obhájená, preto je značná časť kódu (cca 99%)
+skopírovaná z minuloročného gitlab repozitára (BI-PA2/B222/BI/beczatom), pri kopírovaní sa mi však nepodarilo zachovať
+históriu :/.
+
 ## Kde mám polymorfizmus?
 
 - Polymorfizmus využívam pri triede `CComand`, z ktorej dedia triedy `CImport`, `CSelect`, `CPrint`, `CAdd` `CHelp`
